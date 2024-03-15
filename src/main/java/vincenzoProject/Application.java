@@ -85,7 +85,14 @@ public class Application {
 
         logger.info("\n-------------------------------------------------------------------------------------------------------------------\n");
 
-        logger.info("Adesso applicherò il metodo di ricerca basato sul nome dell'autore, prende in input una stringa e ritorna\nun arraylist di oggetti che hanno un match nel nome. In seguito vengono stampati i risultati");
+        logger.info("Adesso applicherò il metodo di ricerca basato sul nome dell'autore, prende in input una stringa e ritorna\nun arraylist di oggetti che hanno un match nel nome. In seguito vengono stampati i risultati. Digita il nome da cercare:");
+
+        String searchParam = scanner.nextLine();
+
+        libreria.searchByAuthor(searchParam).forEach(item -> logger.info(item.toString()));
+
+        logger.info("\n-------------------------------------------------------------------------------------------------------------------\n");
+
     }
 
 

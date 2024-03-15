@@ -41,16 +41,16 @@ public class Library {
             content.put(element.getISBN(), element);
             System.out.println(element.getPublicationYear() + " aggiunto con ID: " + element.getISBN());
         } else {
-            System.out.println("An element with ID: " + element.getISBN() + " already exists.");
+            System.out.println("E' già presente un elemento con id: " + element.getISBN() + " e non è stata applicata nessuna modifica.");
         }
     }
 
     public void removeElement(BiblioItem element) {
         if (content.containsKey(element.getISBN())) {
             content.remove(element.getISBN());
-            System.out.println(element.getClass().getSimpleName() + " removed");
+            System.out.println(element.getClass().getSimpleName() + " rimosso");
         } else {
-            System.out.println("No element found with ID: " + element.getISBN());
+            System.out.println("Nessun elemento trovato con isbn " + element.getISBN());
         }
     }
 
@@ -75,7 +75,7 @@ public class Library {
         if (!content.containsKey(element.getISBN())) {
             content.put(element.getISBN(), element);
         } else {
-            System.out.println("Element with ISBN " + element.getISBN() + " already exists.");
+            System.out.println("Elemento con id" + element.getISBN() + " esiste già, nessuna modifica applicata.");
         }
     }
 
