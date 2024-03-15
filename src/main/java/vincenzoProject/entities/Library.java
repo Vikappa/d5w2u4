@@ -25,15 +25,15 @@ public class Library {
                             faker.random().nextInt(1900, 2024),
                             faker.random().nextInt(50, 500),
                             Magazine.PublicationFrequency.values()[faker.random().nextInt(Magazine.PublicationFrequency.values().length)]);
+            content.put(newItem.getISBN(), newItem);
         }
     }
+
     @Override
     public String toString() {
-        String ritorno = "Libreria completa:\n";
-        for (BiblioItem biblioItem : content) {
-            ritorno += biblioItem.toString() + "\n";
-    }
-        return ritorno;
+        return content.values().stream()
+                .map(BiblioItem::toString)
+                .collect(Collectors.joining("\n", "Libreria completa:\n", ""));
     }
 
     public void addElement(BiblioItem element) {
@@ -70,4 +70,13 @@ public class Library {
     public BiblioItem searchByISBN(int isbn) {
         return content.get(isbn);
     }
+
+    public void pushElement(BiblioItem element) {
+        if (!content.containsKey(element.getISBN())) {
+            content.put(element.getISBN(), element);
+        } else {
+            System.out.println("Element with ISBN " + element.getISBN() + " already exists.");
+        }
+    }
+
 }
