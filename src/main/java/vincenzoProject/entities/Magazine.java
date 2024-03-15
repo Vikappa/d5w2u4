@@ -8,8 +8,8 @@ public class Magazine extends BiblioItem {
 
     private PublicationFrequency publicationFrequency;
 
-    public Magazine(int isbn, String title, int publicationYear, int pages, PublicationFrequency publicationFrequency) {
-        super(isbn, title, publicationYear, pages);
+    public Magazine(String title, int publicationYear, int pages, PublicationFrequency publicationFrequency) {
+        super( title, publicationYear, pages);
         this.publicationFrequency = publicationFrequency;
     }
 

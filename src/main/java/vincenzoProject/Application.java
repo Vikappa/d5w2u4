@@ -2,6 +2,7 @@ package vincenzoProject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.github.javafaker.Faker;
+import vincenzoProject.entities.Library;
 
 
 public class Application {
@@ -10,6 +11,10 @@ public class Application {
     Faker faker = new Faker();
 
     public static void main(String[] args) {
-        logger.info("Hello");
+        Library libreria = new Library();
+        logger.info(libreria.toString());
     }
+
+
+
 }
