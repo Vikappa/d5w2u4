@@ -3,7 +3,7 @@ package vincenzoProject.entities;
 import java.time.LocalDate;
 
 public abstract class BiblioItem {
-    protected final int ISBN;
+    private int ISBN;
     protected final String title;
     protected final int publicationYear;
     protected final int pages;
@@ -13,6 +13,13 @@ public abstract class BiblioItem {
     public BiblioItem( String title, int publicationYear, int pages) {
         lastSbn += 1;
         ISBN = lastSbn;
+        this.title = title;
+        this.publicationYear = publicationYear;
+        this.pages = pages;
+    }
+
+    public BiblioItem(int isbn, String title, int publicationYear, int pages) {
+        this.ISBN = isbn;
         this.title = title;
         this.publicationYear = publicationYear;
         this.pages = pages;
