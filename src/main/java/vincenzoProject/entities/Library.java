@@ -10,14 +10,25 @@ public class Library {
     private ArrayList<BiblioItem> content;
 
     public Library() {
+
+        boolean moneta = faker.random().nextBoolean();
+
         content = new ArrayList<>();
         for (int i = 0; i < 1000; i++) {
-            content.add(new Book(
-                    faker.book().title(),
-                    faker.random().nextInt(1900, 2024),
-                    faker.random().nextInt(50, 500),
-                    faker.book().author(),
-                    faker.book().genre()));
+            if(moneta) {
+                content.add(new Book(
+                        faker.book().title(),
+                        faker.random().nextInt(1900, 2024),
+                        faker.random().nextInt(50, 500),
+                        faker.book().author(),
+                        faker.book().genre()));
+            } else {
+                content.add(new Magazine(
+                        faker.book().title(),
+                        faker.random().nextInt(1900, 2024),
+                        faker.random().nextInt(50, 500),
+                        Magazine.PublicationFrequency.values()[faker.random().nextInt(0, 2)]));
+            }
         }
     }
 

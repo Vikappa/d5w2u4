@@ -21,4 +21,8 @@ public class Magazine extends BiblioItem {
         this.publicationFrequency = publicationFrequency;
     }
 
+    @Override
+    public String toString() {
+        return this.getISBN() +" - ["+this.title + ", " + this.publicationFrequency + "] " + this.publicationYear + " " + this.pages+" pagine";
+    }
 }
